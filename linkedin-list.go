@@ -13,10 +13,15 @@ type LinkedList struct {
 }
 
 func main() {
-	fmt.Println(addTwoNumbers(2, 3))
+	list := &LinkedList{}
+	linkedListSample(list, 1)
+	
+	for node:=list.Head; node != nil; node=node.Next {
+		fmt.Println(node.Data)
+	}
 }
 
-func linkedListSample(l *LinkedList) LinkedList {
+func linkedListSample(l *LinkedList, data int) {
 	newNode := &Node{Data: data}
 	newNode.Next = l.Head
 	l.Head = newNode
